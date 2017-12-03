@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@mipmap/blur"
+
+    tools:context="com.longurlshortener.urlshortener.MainActivity">
+    <include layout="@layout/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/main"
+        >
+
+    </FrameLayout>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:id="@+id/edit"
+        android:layout_marginTop="20dp"
+        android:hint="Enter website ( Without http:// )"
+        android:gravity="center"
+        android:background="@drawable/edittext"
+        />
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:onClick="shorted"
+        >
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/edittext"
+            android:id="@+id/edit2"
+            android:gravity="center"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="0dp"
+            android:hint="Shorted website name"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:layout_gravity="center_vertical"
+            android:textSize="20dp"
+            android:textColor="@color/txt"
+            android:id="@+id/newtext"
+            />
+
+        </FrameLayout>
+
+
+    <com.spark.submitbutton.SubmitButton
+        android:id="@+id/submitButton"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:onClick="submit"
+        android:text="Short"
+        android:textSize="15dp"
+        android:textColor="@color/gray"
+        app:sub_btn_background="@color/white"
+        app:sub_btn_duration="1000"
+        app:sub_btn_line_color="@color/green"
+        app:sub_btn_ripple_color="@color/green"
+        app:sub_btn_tick_color="@color/white" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="0dp">
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="@color/txt"
+        android:textStyle="bold"
+        android:paddingLeft="10dp"
+        android:background="@drawable/edittext"
+        android:textSize="20dp"
+        android:id="@+id/website"
+        android:onClick="copy"
+        android:visibility="gone"
+        android:layout_marginLeft="10dp"
+
+        />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/relative">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/laptop"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="157dp"
+            android:layout_marginStart="157dp"
+            android:layout_marginTop="73dp" />
+            <com.google.android.gms.ads.AdView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/adview"
+                ads:adSize="BANNER"
+                ads:adUnitId="ca-app-pub-4787614537130897/3767780162"
+                ></com.google.android.gms.ads.AdView>
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/edittext"
+            android:src="@drawable/copy"
+            android:onClick="copy"
+            android:visibility="gone"
+            android:id="@+id/cpyimg"
+            />
+        </LinearLayout>
+    <com.google.android.gms.ads.AdView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/adview2"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-4787614537130897/3767780162"
+        ></com.google.android.gms.ads.AdView>
+
+    <WebView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/mywebsite"
+        android:layout_marginTop="5dp"
+        android:visibility="gone"
+        android:background="@drawable/edittext"
+        >
+
+    </WebView>
+
+</LinearLayout>
+    <android.support.design.widget.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        app:menu="@menu/menu"
+        android:layout_gravity="start"
+        android:id="@+id/navigation"
+        app:headerLayout="@layout/header"
+
+        >
+
+    </android.support.design.widget.NavigationView>
+</android.support.v4.widget.DrawerLayout>

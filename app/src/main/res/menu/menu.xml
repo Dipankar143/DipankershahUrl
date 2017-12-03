@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/create"
+        android:title="Create Another Link"
+        android:icon="@mipmap/ic_create_black_24dp"
+        />
+    <item android:id="@+id/track"
+        android:title="Track website"
+        android:icon="@mipmap/ic_my_location_black_24dp"/>
+
+</menu>
